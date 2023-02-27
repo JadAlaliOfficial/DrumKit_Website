@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Drum Kit JavaScript30 Day 1</title>
+    <link rel="stylesheet" href="style3.css" />
+  </head>
+  <body class="mybody">
+    <section class="keys_container">
+      <article class="data_key_65 key">
+        <kbd class="letter">A</kbd>
+        <span class="sound">CLAP</span>
+      </article>
+      <article class="key data_key_83">
+        <kbd class="letter">S</kbd>
+        <span class="sound">HIHAT</span>
+      </article>
+      <article class="key data_key_68">
+        <kbd class="letter">D</kbd>
+        <span class="sound">KICK</span>
+      </article>
+      <article class="key data_key_70">
+        <kbd class="letter">F</kbd>
+        <span class="sound">OPENHAT</span>
+      </article>
+      <article class="key data_key_71">
+        <kbd class="letter">G</kbd>
+        <span class="sound">BOOM</span>
+      </article>
+      <article class="key data_key_72">
+        <kbd class="letter">H</kbd>
+        <span class="sound">RIDE</span>
+      </article>
+      <article class="key data_key_74">
+        <kbd class="letter">J</kbd>
+        <span class="sound">SNARE</span>
+      </article>
+      <article class="key data_key_75">
+        <kbd class="letter">K</kbd>
+        <span class="sound">TOM</span>
+      </article>
+      <article class="key data_key_76">
+        <kbd class="letter">L</kbd>
+        <span class="sound">TINK</span>
+      </article>
+    </section>
+
+    <audio class="data_key_65" src="sound/clap.wav"></audio>
+    <audio class="data_key_83" src="sound/hihat.wav"></audio>
+    <audio class="data_key_68" src="sound/kick.wav"></audio>
+    <audio class="data_key_70" src="sound/openhat.wav"></audio>
+    <audio class="data_key_71" src="sound/boom.wav"></audio>
+    <audio class="data_key_72" src="sound/ride.wav"></audio>
+    <audio class="data_key_74" src="sound/snare.wav"></audio>
+    <audio class="data_key_75" src="sound/tom.wav"></audio>
+    <audio class="data_key_76" src="sound/tink.wav"></audio>
+
+    <script>
+      window.addEventListener("keydown", playSound);
+      function playSound(e) {
+        const audio = document.querySelector(
+          `audio[class=data_key_${e.keyCode}]`
+        );
+        const key = document.querySelector(`.data_key_${e.keyCode}.key`);
+        if (!audio) return;
+        audio.currentTime = 0;
+        audio.play();
+        key.classList.add("playing");
+        console.log(key);
+      }
+      window.addEventListener("keyup", removeanimation);
+      function removeanimation(e) {
+        const key = document.querySelector(`.data_key_${e.keyCode}.key`);
+        key.classList.remove("playing");
+        console.log(key);
+      }
+    </script>
+  </body>
+</html>
