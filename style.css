@@ -1,5 +1,6 @@
 html {
   font-size: 10px;
+
   background: url("./background.jpg") bottom center;
   background-size: cover;
 }
@@ -10,38 +11,28 @@ html {
   padding: 0;
   font-family: sans-serif;
 }
-.mybody {
-  display: grid;
-  justify-items: center;
-  align-items: center;
-  align-content: center;
-  width: 98%;
-  height: 65.5em;
-}
 
 .keys_container {
-  width: 98%;
-  grid-row: 1 / span 1;
-  grid-column: 1 / span 1;
   display: grid;
+  grid-column-gap: 3px;
+
   grid-template-columns: repeat(9, 1fr);
-  column-gap: 0.5em;
-  align-items: center;
-  align-content: center;
-  justify-items: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 30em;
+  padding-bottom: 29em;
 }
 
 .key {
-  width: 100%;
   border: solid 3px black;
+  box-shadow: 0px 0px 4px rgb(83, 0, 83);
   border-radius: 1em;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.6);
   display: grid;
   grid-template-rows: 1fr 1fr;
   align-items: center;
-  align-content: center;
   justify-content: space-evenly;
-  transition: all 0.07;
+  transition: all 0.07s;
 }
 
 .letter {
@@ -49,20 +40,23 @@ html {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-weight: bold;
   font-size: 5ex;
-  color: beige;
-  text-shadow: 4px 1px 4px black;
+  color: #a6d1ff;
+  text-shadow: 1px 1px 4px #a6d1ff;
 }
 
 .sound {
+  padding: 0.4em;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bolder;
   font-weight: normal;
   font-style: italic;
-  color: rgb(29, 196, 146);
-  text-shadow: 1px 1px 4px rgb(189, 0, 0);
+  font-size: 2.6ex;
+  color: #b4ffc2;
+  text-shadow: 1px 1px 4px #b4ffc2;
 }
 
 .playing {
   transform: scale(1.1);
   border: solid 3px rgb(196, 98, 29);
+  box-shadow: 0px 0px 5px rgb(211, 174, 9);
 }
